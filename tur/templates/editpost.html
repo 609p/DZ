@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Редактирование поста</title>
+{% endblock %}
+
+{% block content %}
+    <form class ="border border-3 border-info w-50 m-2 p-3 rounded"
+        action = "/saveeditpost/{{post.id}}"
+        method = "POST" 
+        enctype = "multipart/form-data">
+                {% csrf_token %}
+                <input name = "title" type = "text" style="color:blueviolet" class="fs-1" value= "{{post.title}}"/> 
+                <input style="width: 40vw;" src =  "/static/images/{{post.image}}" alt=""/>
+                <input type = "file" name="file" />
+                <input name = "text" type = "text" style="color: rgb(18, 202, 74);"  style="width: 40vw;" value = "{{post.text}}">
+                <input type = "submit" value = "Сохранить"/> 
+    </form>
+
+{% endblock %}

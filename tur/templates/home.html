@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Главная страница</title>
+{% endblock %}
+
+{% block content %}
+        {% if user.is_authenticated %}
+        <div class=" m-1">
+            <div class="d-flex justify-content-center" > 
+                <p>" Добро пожаловать дорогой и уважаемый {{user}}</p>    
+                     
+            </div>
+            <a class="btn btn-success  m-3" href="/profile">
+                Профиль
+            </a >
+            
+            <a class="btn btn-success  m-3" href = "posts">
+                Посты
+            </a> 
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-danger  m-3" href="/logout">
+                 Выйти
+                </a>
+            </div>                  
+        {% else%}
+        <a class="btn btn-success  m-3" href = "login">
+            Вход
+        </a>
+        <a class="btn btn-success  m-3" href = "registration">
+            Регистрация
+        </a>
+        {%endif%}
+        <!-- <a class="btn btn-success  m-3" href="/profile">
+            Профиль
+        </a >
+        
+        <a class="btn btn-success  m-3" href = "posts">
+            Посты
+        </a> -->
+        <div class="title-home">
+            Добро пожаловать на сайт путешествий по Франции!
+        </div> 
+        <div class="title-home">
+            Дешевых и сердитых
+        </div> 
+    
+        <div>
+            <img class= "img-home" src = "{% static 'bitacora-viaje-768x512'%}"/>
+        </div> 
+{% endblock %}

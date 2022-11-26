@@ -1,0 +1,21 @@
+.img-home{
+    width: 50vh;
+}
+
+.title-home{
+    color: blue;
+    margin: 20px;
+    font-size: large;
+}
+
+.post-title{
+    color: rgb(57, 206, 77);
+    margin: 20px;
+    font-size: large;
+}
+
+.post-text{
+    color: rgb(173, 34, 45);
+    margin: 20px;
+    font-size: 20px;
+}

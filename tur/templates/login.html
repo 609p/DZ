@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Вход</title>
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+            <div style="width:20vw">
+                <form styleaction="/registration" method="POST">
+                    {% csrf_token %}
+                    <input class="form-control m-2" m-2 type ="text" Placeholder="Имя" name = 'name'/>
+                    <input class="form-control m-2" type ="text" Placeholder="Пароль" name = 'password'/>
+                    <input class="form-control m-2" type = "submit" value = "Войти" />
+                </form>
+            </div>              
+        </div> 
+{% endblock %}

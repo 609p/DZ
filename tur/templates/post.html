@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Пост</title>
+{% endblock %}
+
+{% block content %}
+        <a href="/">
+            Главная
+        </a>
+        
+            <div class = "border border-4 border-primary w-50 m-2 p-3 rounded">
+                <a href="post/{{post.id}}">
+                <h3 class = "fs-1">{{post.title}}</h3> 
+                             
+                <p class = "post-text">{{post.text}} </p>           
+                <img style="width: 40vw;" src = "/static/images/{{post.image}}" alt=""/>   
+                </a>             
+            </div>
+            <div class="m-2">
+                <a  class="btn btn-secondary  m-3"  href="/editpost/{{post.id}}">
+                    Редактировать
+                </a>
+                
+                <a  class="btn btn-danger  m-3" href="/deletepost/{{post.id}}">
+                    Удалить
+                </a>
+            </div>
+{% endblock %}

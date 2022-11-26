@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Посты</title>
+{% endblock %}
+
+>
+{% block content %}
+        <div>
+            <a class="btn btn-secondary  m-3" href = "/export">
+                Экспорт
+            </a>
+            <a class="btn btn-secondary  m-3" m-2 href = "/download">
+                Скачать
+            </a>
+            <a class="btn btn-secondary  m-3" href="/">
+                Главная
+            </a>
+        </div>
+
+
+        <div class="d-flex flex-wrap">
+        {% for post in posts %}
+        
+            <a href="post/{{post.id}}">
+            <div class = "border border-4 border-primary w-25 m-2 p-3 rounded">
+                
+                <h3 class = "fs-1">{{post.title}}</h3> 
+                              
+                <p class = "post-text">{{post.text}} </p>           
+                <img style="width: 10vw;" src = "static/images/{{post.image}}" alt=""/>
+            </a>     
+            </div>
+       
+        {% endfor %}
+        </div> 
+        <div>
+            <form action="newpost" method = "POST"enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type = "title" placeholder = "Заголовок" name="title" />
+                <input type = "text" placeholder = "Текст поста" name="text" />
+                <input type = "file" name="file" />
+                
+                <input type = "submit" value = "Создать" />
+            </form>
+          </div>
+{% endblock %}

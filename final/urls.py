@@ -22,5 +22,5 @@ urlpatterns = [
     path('registration',views.registration),
     path('login',views.login_user),
     path('logout',views.logout_user),
-
+    path('post/<int:id>/content',views.content)
 ]

@@ -11,12 +11,11 @@
             <a class="btn btn-secondary  m-3" href = "/export">
                 Экспорт
             </a>
-            <a class="btn btn-secondary  m-3" m-2 href = "/download">
-                Скачать
-            </a>
-            <a class="btn btn-secondary  m-3" href="/">
+
+            <a class="btn btn-success  m-3" href="/">
                 Главная
             </a>
+            
         </div>
 
 
@@ -38,11 +37,12 @@
         <div>
             <form action="newpost" method = "POST"enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type = "title" placeholder = "Заголовок" name="title" />
-                <input type = "text" placeholder = "Текст поста" name="text" />
+                <input type = "title" placeholder = "Город" name="title" />
+                <input type = "text" placeholder = "Тема" name="text" />
+                <input type = "content" placeholder = "Текст поста" name="content" />
                 <input type = "file" name="file" />
                 
-                <input type = "submit" value = "Создать" />
+                <input type = "submit" class="btn btn-success"  value = "Создать" />
             </form>
           </div>
 {% endblock %}

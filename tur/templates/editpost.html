@@ -11,9 +11,10 @@
         method = "POST" 
         enctype = "multipart/form-data">
                 {% csrf_token %}
-                <input name = "title" type = "text" style="color:blueviolet" class="fs-1" value= "{{post.title}}"/> 
-                <input style="width: 40vw;" src =  "/static/images/{{post.image}}" alt=""/>
-                <input type = "file" name="file" />
+                <input name = "title" type = "text" style = "color:blueviolet" class="fs-1" value= "{{post.title}}"/> 
+                <input style = "width: 40vw;" src =  "/static/images/{{post.image}}" alt=""/>
+                <input type = "file" name = "file" />
+                <input name = "content" type = "text" style = "color:rgb(173, 27, 149)" class="fs-1" value= "{{post.content}}"/> 
                 <input name = "text" type = "text" style="color: rgb(18, 202, 74);"  style="width: 40vw;" value = "{{post.text}}">
                 <input type = "submit" value = "Сохранить"/> 
     </form>

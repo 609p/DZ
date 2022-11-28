@@ -1,5 +1,5 @@
 .img-home{
-    width: 50vh;
+    width: 70vmax;
 }
 
 .title-home{
@@ -15,7 +15,13 @@
 }
 
 .post-text{
-    color: rgb(173, 34, 45);
+    color: rgb(236, 111, 9);
+    margin: 20px;
+    font-size: 20px;
+}
+
+.post-content{
+    color: rgb(201, 28, 201);
     margin: 20px;
     font-size: 20px;
 }

@@ -6,25 +6,37 @@
 {% endblock %}
 
 {% block content %}
-        <a href="/">
+        <a class="btn btn-success  m-3" href="/">
             Главная
         </a>
+        <a class="btn btn-success  m-3" href="/posts">
+            Посты
+        </a>
+        <a class="btn btn-success  m-3" href="https://www.aviasales.com/">
+            Aviasales
+        </a>  
+        <a class="btn btn-success  m-3" href="https://www.couchsurfing.com/">
+            Couchsurfing
+        </a>
         
-            <div class = "border border-4 border-primary w-50 m-2 p-3 rounded">
-                <a href="post/{{post.id}}">
-                <h3 class = "fs-1">{{post.title}}</h3> 
-                             
-                <p class = "post-text">{{post.text}} </p>           
-                <img style="width: 40vw;" src = "/static/images/{{post.image}}" alt=""/>   
-                </a>             
+            <div class = "border border-4 border-primary w-100 m-2 p-3 rounded">
+                
+                <h3 class = "fs-1">{{post.title}}</h3>                             
+                <p class = "post-text">{{post.content}} </p>       
+                <img style="width: 10vw;" src = "/static/images/{{post.image}}" alt=""/>   
+                     
             </div>
+
+     
             <div class="m-2">
-                <a  class="btn btn-secondary  m-3"  href="/editpost/{{post.id}}">
-                    Редактировать
+                 <a  class="btn btn-secondary  m-3"  href="/editpost/{{post.id}}">
+                     Редактировать
                 </a>
                 
-                <a  class="btn btn-danger  m-3" href="/deletepost/{{post.id}}">
-                    Удалить
+                 <a  class="btn btn-danger  m-3" href="/deletepost/{{post.id}}">
+                        Удалить
                 </a>
-            </div>
+            </div>           
+       
+           
 {% endblock %}
